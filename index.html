@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>High Five '09!</title>
+	<meta name="author" content="Ed Schmalzle">
+	<link rel="stylesheet" type="text/css" href="css/highfive.css" />
+	<script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="script/highfive.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		   load_scoreboard();
+		 });
+	</script>
+</head>
+<body>
+  <div id="scoreboard">
+    <h1>High Five 2009 Leader Board</h1>
+		<ol id="menu">
+			<li>
+				<a href="#" id="show_about" onclick="update_scoreboard();">About</a>
+				<a href="#" id="hide_about" style="display: none;">Close</a>
+			</li>
+			<li><a href="http://www.maximumfun.org/shows/jordan-jesse-go">JJGo!</a></li>
+		</ol>
+		<div style="clear: both;"></div>
+    <ol id="contestant_list">
+    </ol>
+  </div>
+</body>
+</html>
