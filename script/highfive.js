@@ -63,6 +63,23 @@ load_scoreboard = function( page ) {
 		});
 		
 		// Sort the contestants based on score
+		top_score = -1;
+		starting_index = 0;
+		contestant_list = $( "li.contestant" );
+		current_top_element = null;
+		while( starting_index < contestant_list.length ) {
+			contestant_list = $( "li.contestant" );			
+			for( i=0; i < contestant_list.length - starting_index; i++ ) {
+				current_score = parseInt( contestant_list[i].childNodes[1].innerHTML );
+				if( current_score >= top_score ) {
+					top_score = current_score;
+					current_top_element = contestant_list[i];
+				}
+			}
+			$( "#contestant_list" ).append( current_top_element );
+			starting_index++;
+			top_score = -1;
+		}
 	});	
 }
 
