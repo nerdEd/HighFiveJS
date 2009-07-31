@@ -35,7 +35,7 @@ load_scoreboard = function( api_key, moderator, tag, page ) {
 
 				$.getJSON( owner_search , function( data ) { 
 					var name_element = $( "li#contestant_" + safe_owner + " span.contestant_name" )[0]
-					name_element.innerHTML = "<a href='#'>" + data.person.username._content + "</a>";
+					name_element.innerHTML = "<a href='#' onclick='toggle_slideshow(\"" + photo.owner + "\", \"" + tag + "\"); return false;'>" + data.person.username._content + " +</a>";
 				});							
 				
 				// Add moderation points to contestants score
@@ -96,4 +96,21 @@ determine_mod_value = function( comment_text ) {
 		result = comment_text.match( /\[[+-]\d*\]/ );
 	}
 	return mod;
+}
+
+toggle_slideshow = function( flickr_id, tag ) {
+	var safe_owner = flickr_id.replace( "@", "" );
+	picture_row =  $( "li#contestant_picture_row" + safe_owner )[0];	
+	if( picture_row == null ) {				
+		contestant_row = $( "li#contestant_" + safe_owner );
+		slideshow = "<li id='contestant_picture_row" + safe_owner + "' class='contestant_pictures'><iframe align='center' src='http://www.flickr.com/slideShow/index.gne?user_id=" + flickr_id + "&tags=" + tag + "' frameBorder='0' width='400' scrolling='no' height='400'/></li>"
+		contestant_row.after( slideshow );
+		name_element = $( "li#contestant_" + safe_owner + " span.contestant_name a" )[0];
+		name_element.innerHTML = name_element.innerHTML.replace( "+", "-" );
+	}
+	else {
+		$( "li#contestant_picture_row" + safe_owner ).remove();
+		name_element = $( "li#contestant_" + safe_owner + " span.contestant_name a" )[0];
+		name_element.innerHTML = name_element.innerHTML.replace( "-", "+" );
+	}
 }
