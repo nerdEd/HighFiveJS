@@ -4,6 +4,10 @@ body{
 	
 }
 
+a:focus {
+	outline: none;
+}
+
 #menu li {
 	display: inline-block;
 	margin: 5px 0;
@@ -67,10 +71,6 @@ li.contestant span {
 li.contestant span a {
 	color: #CEEBF2;
 	text-decoration: none;
-}
-
-li.contestant span a:focus {
-	outline: none;
 }
 
 li.contestant span:first-child {
