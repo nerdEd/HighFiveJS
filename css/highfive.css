@@ -61,6 +61,7 @@ li.contestant span {
 	float: right;
 	color: #F9F3A2;
 	text-transform: uppercase;
+	margin: 4px 0;
 }
 
 li.contestant span a {
