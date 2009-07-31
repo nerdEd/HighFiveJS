@@ -35,7 +35,7 @@ load_scoreboard = function( api_key, moderator, tag, page ) {
 
 				$.getJSON( owner_search , function( data ) { 
 					var name_element = $( "li#contestant_" + safe_owner + " span.contestant_name" )[0]
-					name_element.innerHTML = data.person.username._content;
+					name_element.innerHTML = "<a href='#'>" + data.person.username._content + "</a>";
 				});							
 				
 				// Add moderation points to contestants score
