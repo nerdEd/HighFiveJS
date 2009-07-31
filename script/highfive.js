@@ -1,11 +1,11 @@
-load_scoreboard = function( api_key, moderator, page ) {
+load_scoreboard = function( api_key, moderator, tag, page ) {
 	
 	page = typeof( page ) != 'undefined' ? page : 1;
 	
 	// Build query string for photo search
 	var photo_search = 'http://api.flickr.com/services/rest?';
 	photo_search += "&method=flickr.photos.search";
-	photo_search += "&tags=highfive09";
+	photo_search += "&tags=" + tag;
 	photo_search += "&api_key=" + api_key;
 	photo_search += "&page=" + page;
 	photo_search += "&format=json";
@@ -15,7 +15,7 @@ load_scoreboard = function( api_key, moderator, page ) {
 	jQuery.getJSON( photo_search, function( data ) {
 		if( parseInt( data.photos.pages ) > page ) {
 			page++;
-			load_scoreboard( api_key, moderator, page );
+			load_scoreboard( api_key, moderator, tag, page );
 		}
 		$.each(data.photos.photo, function( i, photo ) {
 			var safe_owner = photo.owner.replace( "@", "" );
