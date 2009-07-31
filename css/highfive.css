@@ -68,6 +68,10 @@ li.contestant span a {
 	text-decoration: none;
 }
 
+li.contestant span a:focus {
+	outline: none;
+}
+
 li.contestant span:first-child {
 	float: left;
 }
