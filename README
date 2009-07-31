@@ -1,0 +1,12 @@
+HighFive is a Jekyll site that generates a scoreboard for a flickr photo contest. 
+
+Setup:
+
+1) Rename _config.yml.sample to _config.yml and replace the dummy values
+  - the api key is the api key you get from flickr
+  - the moderator value is the username of the person who is moderating the contest
+  - the tag is the tag being used for your contest
+
+2) Generate the site with the jekyll command
+
+3) deploy
