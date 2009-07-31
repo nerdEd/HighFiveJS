@@ -114,3 +114,16 @@ toggle_slideshow = function( flickr_id, tag ) {
 		name_element.innerHTML = name_element.innerHTML.replace( "-", "+" );
 	}
 }
+
+toggle_about = function() {
+	if( $( "#about_content" ).css( "display" ) == "none" ) {
+		$( "#contestant_list" ).css( "display", "none" );
+		$( "#about_content" ).css( "display", "" );
+		$( "#show_about" )[0].innerHTML = "Close";
+	}
+	else {
+		$( "#about_content" ).css( "display", "none" );
+		$( "#contestant_list" ).css( "display", "" );
+		$( "#show_about" )[0].innerHTML = "About";		
+	}
+}
