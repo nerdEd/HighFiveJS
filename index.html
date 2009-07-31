@@ -1,3 +1,7 @@
+---
+
+---
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -11,13 +15,13 @@
 	<script type="text/javascript" src="script/highfive.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-		   load_scoreboard();
+		   load_scoreboard( '{{site.api_key}}', '{{site.moderator}}' );
 		 });
 	</script>
 </head>
 <body>
   <div id="scoreboard">
-    <h1>High Five 2009 Leader Board</h1>
+    <h1>{{site.scoreboard_header}}</h1>
 		<ol id="menu">
 			<li>
 				<a href="#" id="show_about" onclick="update_scoreboard();">About</a>

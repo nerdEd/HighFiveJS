@@ -1,7 +1,4 @@
-var api_key = 'b7bdcae62787537de768d0fd15b24085';
-var moderator = 'youngamerican';
-
-load_scoreboard = function( page ) {
+load_scoreboard = function( api_key, moderator, page ) {
 	
 	page = typeof( page ) != 'undefined' ? page : 1;
 	
@@ -18,7 +15,7 @@ load_scoreboard = function( page ) {
 	jQuery.getJSON( photo_search, function( data ) {
 		if( parseInt( data.photos.pages ) > page ) {
 			page++;
-			load_scoreboard( page );
+			load_scoreboard( api_key, moderator, page );
 		}
 		$.each(data.photos.photo, function( i, photo ) {
 			var safe_owner = photo.owner.replace( "@", "" );
