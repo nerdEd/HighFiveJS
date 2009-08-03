@@ -43,6 +43,11 @@ a:focus {
 	text-transform: uppercase;
 }
 
+ol#contestant_list {
+	list-style-type: none;
+	margin-left: 0;
+}
+
 li.contestant {
 	display: block;
 	margin: 5px 0;
