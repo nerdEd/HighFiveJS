@@ -47,7 +47,7 @@ load_scoreboard = function( api_key, moderator, tag, page ) {
 				comment_search += '&jsoncallback=?';
 				
 				$.getJSON( comment_search, function( data ) {
-					$.each( data.comments.comment, function( i, comment ) {
+					$.each( data.comments, function( i, comment ) {
 						if( comment.authorname == moderator ) {
 							bump_score( owner.id, determine_mod_value( comment._content ) );
 						}
